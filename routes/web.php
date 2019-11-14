@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('signup', function () {
+    return view('signup');
+});
+
+Route::get('dreamlist', function () {
+    return view('dreamlist');
+});
+
+Route::get('timeline', function () {
+    return view('timeline');
+});
