@@ -69,7 +69,7 @@ class Article extends Model
 
     public function user()
     {
-        return $this->belong('App\Models\BackpackUser', 'user_id');
+        return $this->belongsTo('App\Models\BackpackUser', 'user_id');
     }
 
     /*

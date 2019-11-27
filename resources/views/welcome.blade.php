@@ -11,7 +11,7 @@
                     </h1>
                     <p class="text-white" style="font-size: 1.4em">
                         Mulai perjalanan gapai mimpi-mimpimu</p>
-                    <a href="signup" class="genric-btn success radius arrow" style="width:31em; font-weight:700; font-size:2em; box-shadow: 1px 10px 48px -2px rgba(0,0,0,0.75); padding-left:0.5em">DAFTAR SEKARANG<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="{{ backpack_url('register') }}" class="genric-btn success radius arrow" style="width:31em; font-weight:700; font-size:2em; box-shadow: 1px 10px 48px -2px rgba(0,0,0,0.75); padding-left:0.5em">DAFTAR SEKARANG<span class="lnr lnr-arrow-right"></span></a>
                     <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                    aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -41,7 +41,7 @@
                         </div>
                       </div>
                     </div>
-                  <p class="text-white">sudah punya akun? <a href="#" style="color:#4cd3e3" data-toggle="modal" data-target="#modalLoginForm">login disini.</a></p>
+                  <p class="text-white">sudah punya akun? <a href="{{ backpack_url('login') }}" style="color:#4cd3e3" data-toggle="modal" data-target="#modalLoginForm">login disini.</a></p>
                 </div>
                 <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
                 <img class="img-fluid" src="{{asset('eclipse/img/header-img.png')}}" alt="" />

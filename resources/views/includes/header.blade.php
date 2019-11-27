@@ -1,7 +1,7 @@
 <header class="default-header">
         <nav class="navbar navbar-expand-lg  navbar-light">
           <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{ route('welcome') }}">
               <img src="img/logo.png" alt="" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -12,8 +12,8 @@
             <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
               <ul class="navbar-nav">
                 <li><a href="/">Home</a></li>
-                <li><a href="timeline">Timeline</a></li>
-                <li><a href="dreamlist">Daftar Mimpi</a></li>
+                <li><a href="{{ backpack_url('timeline') }}">Timeline</a></li>
+                <li><a href="{{ backpack_url('dream') }}">Daftar Mimpi</a></li>
                 <!-- Dropdown -->
                 <li class="dropdown">
                   <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -24,7 +24,7 @@
                     <a class="dropdown-item" href="course-details.html">Course Details</a>
                   </div>
                 </li>
-                <li><a href="signup">Sign Up</a></li>
+                <li><a href="{{ backpack_url('login') }}">Sign in</a></li>
     
                 <li>
                   <button class="search">

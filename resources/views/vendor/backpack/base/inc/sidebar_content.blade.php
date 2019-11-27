@@ -1,6 +1,13 @@
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('dashboard') }}"><i class="fa fa-dashboard nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>
 
+<!-- Blog Dashboard -->
+<li class=nav-item><a class=nav-link href="{{ backpack_url('blog') }}"><i class="nav-icon fa fa-newspaper-o"></i> <span>Timeline</span></a></li>
+
+<!-- Dreams -->
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('dream') }}'><i class='nav-icon fa fa-question'></i> Mimpi</a></li>
+
+@can('make articles')
 <!-- Articles -->
 <li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon fa fa-newspaper-o"></i>Postings</a>
@@ -10,11 +17,15 @@
       <li class="nav-item"><a class="nav-link" href="{{ backpack_url('tag') }}"><i class="nav-icon fa fa-tag"></i> Tags</a></li>
     </ul>
 </li>
+@endcan
 
+@can('manage files')
 <!-- File Manager -->
 <li class=nav-item><a class=nav-link href="{{ backpack_url('elfinder') }}"><i class="nav-icon fa fa-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>
+@endcan
 
 <!-- Users, Roles, Permissions -->
+@can('edit users, roles, permissions')
 <li class="nav-item nav-dropdown">
 	<a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon fa fa-group"></i> Authentication</a>
 	<ul class="nav-dropdown-items">
@@ -23,3 +34,4 @@
 	  <li class="nav-item"><a class="nav-link" href="{{ backpack_url('permission') }}"><i class="nav-icon fa fa-key"></i> <span>Permissions</span></a></li>
 	</ul>
 </li>
+@endif

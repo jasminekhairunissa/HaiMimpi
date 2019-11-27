@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('signup', function () {
     return view('signup');
@@ -26,8 +26,3 @@ Route::get('dreamlist', function () {
 Route::get('timeline', function () {
     return view('timeline');
 });
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
