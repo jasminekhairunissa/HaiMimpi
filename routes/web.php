@@ -27,8 +27,7 @@ Route::get('timeline', function () {
     return view('timeline');
 });
 
-Route::get('/admin', 'AdminController@index');
-Route::get('/admin/mimpi', 'MimpiController@index');
-Route::get('/admin/posts', 'PostsController@index');
-Route::get('/admin/streams', 'StreamsController@index');
-Route::get('/admin/users', 'UsersController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
