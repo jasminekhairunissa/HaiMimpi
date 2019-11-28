@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class DreamRequest extends FormRequest
+class TaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,7 @@ class DreamRequest extends FormRequest
         return [
             'title' => 'required|min:5|max:255',
             'status' => 'required',
-            'category_id' => 'required',
+            'dream_id' => 'required',
             'user_id' => 'required'
         ];
     }

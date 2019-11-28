@@ -6,7 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use App\Scopes\UserScope;
 use Illuminate\Database\Eloquent\Model;
 
-class Dream extends Model
+class Task extends Model
 {
     use CrudTrait;
 
@@ -16,11 +16,11 @@ class Dream extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'dreams';
+    protected $table = 'tasks';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = ['title', 'status', 'category_id', 'user_id'];
+    protected $fillable = ['title', 'dream_id', 'status', 'user_id'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -30,28 +30,21 @@ class Dream extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function user(){
+        return $this->belongsTo('App\Models\BackpackUser');
+    }
+
+    public function dream()
+    {
+        return $this->belongsTo('App\Models\Dream');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
-    public function category()
-    {
-        return $this->belongsTo('App\Models\Category');
-    }
-
-    public function user()
-    {
-        return $this->belongsTo('App\Models\BackpackUser');
-    }
-
-    public function tasks()
-    {
-        return $this->hasMany('App\Models\Task', 'dream_id');
-    }
-
-    /*
+/*
     |--------------------------------------------------------------------------
     | SCOPES
     |--------------------------------------------------------------------------
@@ -90,3 +83,4 @@ class Dream extends Model
         static::addGlobalScope(new UserScope);
 	}
 }
+

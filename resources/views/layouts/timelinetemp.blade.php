@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     <head>
-        @include('includes.headtil')
+        @include('includes.head')
         <title>
             Hai Mimpi! - @yield('title')
         </title>

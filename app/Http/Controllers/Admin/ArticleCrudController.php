@@ -26,6 +26,7 @@ class ArticleCrudController extends CrudController
         $this->crud->setModel("App\Models\Article");
         $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/article');
         $this->crud->setEntityNameStrings('article', 'articles');
+        $this->crud->enableExportButtons();
 
         /*
         |--------------------------------------------------------------------------
@@ -117,7 +118,7 @@ class ArticleCrudController extends CrudController
                 'label' => 'Featured item',
                 'type' => 'checkbox',
             ]);
-            
+
             $this->crud->addField([
                 'name'  => 'user_id', 
                 'type'  => 'hidden', 

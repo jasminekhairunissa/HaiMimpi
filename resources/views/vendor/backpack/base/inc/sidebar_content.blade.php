@@ -35,3 +35,4 @@
 	</ul>
 </li>
 @endif
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('task') }}'><i class='nav-icon fa fa-question'></i> Tasks</a></li>
